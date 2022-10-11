@@ -1,3 +1,4 @@
+//https://www.hackerrank.com/challenges/pangrams/copy-from/290983746
 package main
 
 import
@@ -44,7 +45,6 @@ func pangram(s string) string {
     os.Exit(0)
   }
 
-  //  fmt.Println(r)
     rr := []int32(s)
     sort.Slice(rr, func(i, j int) bool {
         return int(rr[i]) < int(rr[j])
