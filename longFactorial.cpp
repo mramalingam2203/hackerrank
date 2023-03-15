@@ -12,7 +12,6 @@ int multiply(int x, int res[], int res_size);
 void factorial(int n)
 {
     int res[MAX];
-
     // Initialize result
     res[0] = 1;
     int res_size = 1;
