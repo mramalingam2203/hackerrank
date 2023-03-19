@@ -5,7 +5,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	//"math"
+	"math"
 	"os"
 	"strings"
 	"unicode"
@@ -18,11 +18,41 @@ func constraints(s string) {
 	}
 }
 
+func max(m int, n int) int {
+	if m < n {
+		return n
+	} else {
+		return m
+	}
+}
+
 func encryption(s string) {
 	s = stripSpaces(s)
-	//var number float64 = math.Sqrt(float64(len(s)))
-	s = insertNth(s, 8)
-	fmt.Print(s)
+	var number float64 = math.Sqrt(float64(len(s)))
+	//cols := max(int(math.Floor(number)), int(math.Ceil(number)))
+	rows, cols := int(math.Floor(number)), int(math.Ceil(number))
+	//fmt.Print(rows, cols)
+
+	r := []rune(s)
+
+	r_2d := make([][]rune, rows)
+	_, _ = r, r_2d
+
+	for i := range r_2d {
+		r_2d[i] = make([]rune, cols)
+	}
+
+	i := 0
+
+	fmt.Print(len(r), rows*cols)
+	for x := 0; x < cols; x++ {
+		for y := 0; y < rows; y++ {
+			//r_2d[y][x] = r[i]
+			i++
+			//fmt.Print(i, " ")
+		}
+	}
+
 }
 
 func stripSpaces(str string) string {
