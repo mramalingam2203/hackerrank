@@ -15,6 +15,10 @@ func highestValuePalindrome(s string, n int32, k int32) string {
 
 }
 
+func canPalindrome() {
+	var mymap map[int]string
+
+}
 func main() {
 
 	highestValuePalindrome("Hello")

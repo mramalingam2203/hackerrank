@@ -31,25 +31,34 @@ func encryption(s string) {
 	var number float64 = math.Sqrt(float64(len(s)))
 	//cols := max(int(math.Floor(number)), int(math.Ceil(number)))
 	rows, cols := int(math.Floor(number)), int(math.Ceil(number))
-	//fmt.Print(rows, cols)
+	fmt.Println(rows, cols)
+	_, _ = rows, cols
 
 	r := []rune(s)
+	/*
+		r_2d := make([][]rune, rows)
+		_, _ = r, r_2d
 
-	r_2d := make([][]rune, rows)
-	_, _ = r, r_2d
+		for i := range r_2d {
+			r_2d[i] = make([]rune, cols)
+		}
 
-	for i := range r_2d {
-		r_2d[i] = make([]rune, cols)
-	}
+		i := 0
 
-	i := 0
+		fmt.Print(len(r), rows*cols)
+		for x := 0; x < cols; x++ {
+			for y := 0; y < rows; y++ {
+				//r_2d[y][x] = r[i]
+				i++
+				//fmt.Print(i, " ")
+			}
+		}*/
 
-	fmt.Print(len(r), rows*cols)
-	for x := 0; x < cols; x++ {
-		for y := 0; y < rows; y++ {
-			//r_2d[y][x] = r[i]
-			i++
-			//fmt.Print(i, " ")
+	for i := 0; i < len(r); i++ {
+		for j := 0; j < cols; j++ {
+			if (i+j)%cols == 0 {
+				fmt.Print(r[i], " ")
+			}
 		}
 	}
 
@@ -80,7 +89,8 @@ func insertNth(s string, n int) string {
 }
 
 func main() {
-	input := "if man was meant to stay on the ground god would have given us roots"
+	//input := "if man was meant to stay on the ground god would have given us roots"
+	input := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz"
 	constraints(input)
 	encryption(input)
 
